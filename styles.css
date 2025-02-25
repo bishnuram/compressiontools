@@ -15,7 +15,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   text-align: center;
 }
@@ -47,6 +47,19 @@ h1 {
   color: #666;
 }
 
+.slider-section {
+  margin: 20px 0;
+}
+
+.slider-section label {
+  font-weight: bold;
+}
+
+.slider-section input[type="range"] {
+  width: 80%;
+  margin: 10px 0;
+}
+
 .output-section {
   margin-top: 20px;
 }
@@ -73,7 +86,7 @@ h1 {
 }
 
 .ad-section {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 /* Responsive Design */
@@ -88,5 +101,9 @@ h1 {
 
   .upload-btn {
     padding: 8px 16px;
+  }
+
+  .slider-section input[type="range"] {
+    width: 90%;
   }
 }
