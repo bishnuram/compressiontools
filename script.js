@@ -1,3 +1,11 @@
+// Compression Ratio Slider
+const compressionRatioSlider = document.getElementById('compressionRatio');
+const ratioValue = document.getElementById('ratioValue');
+compressionRatioSlider.addEventListener('input', function () {
+  ratioValue.textContent = this.value;
+});
+
+// Image Upload and Compression
 document.getElementById('imageUpload').addEventListener('change', function (event) {
   const file = event.target.files[0];
   if (file) {
@@ -34,8 +42,11 @@ document.getElementById('imageUpload').addEventListener('change', function (even
         // Draw image on canvas
         ctx.drawImage(img, 0, 0, width, height);
 
+        // Get compression ratio from slider
+        const compressionRatio = parseFloat(compressionRatioSlider.value);
+
         // Convert canvas to compressed image
-        const compressedImage = canvas.toDataURL('image/jpeg', 0.7);
+        const compressedImage = canvas.toDataURL('image/jpeg', compressionRatio);
 
         // Display compressed image
         const compressedImgElement = document.getElementById('compressedImage');
