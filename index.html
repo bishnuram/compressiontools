@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Compressor</title>
+  <meta name="description" content="Compress your images online for free. Reduce image file size without losing quality. Fast, easy, and responsive image compression tool.">
+  <meta name="keywords" content="image compressor, compress images, reduce image size, online image compressor, free image compression">
+  <meta name="author" content="Bishnu Khatri">
+  <title>Online Image Compressor - Compress Images for Free</title>
   <link rel="stylesheet" href="/compressiontools/styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Image Compressor</h1>
-    <p>Upload an image to compress it and reduce its file size.</p>
+    <h1>Online Image Compressor</h1>
+    <p>Upload an image to compress it and reduce its file size. Adjust the compression ratio using the slider below.</p>
 
     <!-- Image Upload Section -->
     <div class="upload-section">
@@ -18,20 +21,39 @@
       <p id="fileInfo"></p>
     </div>
 
+    <!-- Compression Ratio Slider -->
+    <div class="slider-section">
+      <label for="compressionRatio">Compression Ratio:</label>
+      <input type="range" id="compressionRatio" min="0.1" max="1" step="0.1" value="0.7">
+      <span id="ratioValue">0.7</span>
+    </div>
+
     <!-- Compressed Image Display -->
     <div class="output-section">
       <img id="compressedImage" alt="Compressed Image">
       <a id="downloadLink" class="download-btn" download="compressed_image.jpg">Download Compressed Image</a>
     </div>
 
-    <!-- Advertisement Space -->
+    <!-- Advertisement Spaces -->
     <div class="ad-section">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
+
+    <div class="ad-section">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="ad-section">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
   </div>
 
-  <script src="/compressiontools/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
