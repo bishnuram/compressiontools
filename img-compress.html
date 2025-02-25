@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Compressor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Image Compressor</h1>
+    <p>Upload an image to compress it and reduce its file size.</p>
+
+    <!-- Image Upload Section -->
+    <div class="upload-section">
+      <input type="file" id="imageUpload" accept="image/*">
+      <label for="imageUpload" class="upload-btn">Choose Image</label>
+      <p id="fileInfo"></p>
+    </div>
+
+    <!-- Compressed Image Display -->
+    <div class="output-section">
+      <img id="compressedImage" alt="Compressed Image">
+      <a id="downloadLink" class="download-btn" download="compressed_image.jpg">Download Compressed Image</a>
+    </div>
+
+    <!-- Advertisement Space -->
+    <div class="ad-section">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
