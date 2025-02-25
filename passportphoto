@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crop your images to international passport sizes. Select your country and crop your image to the required dimensions. Free and easy to use.">
+  <meta name="keywords" content="image cropper, passport photo size, crop image, online image cropper, free image cropping">
+  <meta name="author" content="Your Name">
+  <title>Passport Photo Cropper - Crop Images to International Sizes</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .dropdown-section {
+      margin: 20px 0;
+    }
+
+    .dropdown-section label {
+      font-weight: bold;
+    }
+
+    .dropdown-section select {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .upload-section {
+      margin: 20px 0;
+    }
+
+    .upload-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .upload-btn:hover {
+      background-color: #0056b3;
+    }
+
+    #fileInfo {
+      margin-top: 10px;
+      color: #666;
+    }
+
+    .output-section {
+      margin-top: 20px;
+    }
+
+    #croppedCanvas {
+      max-width: 100%;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .download-btn {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #218838;
+    }
+
+    .ad-section {
+      margin: 20px 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .upload-btn {
+        padding: 8px 16px;
+      }
+
+      .dropdown-section select {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Passport Photo Cropper</h1>
+    <p>Select your country and upload an image to crop it to the required passport size.</p>
+
+    <!-- Country Dropdown -->
+    <div class="dropdown-section">
+      <label for="countrySelect">Select Country:</label>
+      <select id="countrySelect">
+        <option value="51x51">USA - 2x2 inches (51x51 mm)</option>
+        <option value="35x45">India - 35x45 mm</option>
+        <option value="35x45">UK - 35x45 mm</option>
+        <option value="35x50">Germany - 35x50 mm</option>
+        <option value="40x60">China - 40x60 mm</option>
+        <option value="50x50">Japan - 50x50 mm</option>
+        <option value="35x45">Canada - 35x45 mm</option>
+        <option value="35x45">Australia - 35x45 mm</option>
+        <option value="35x45">France - 35x45 mm</option>
+        <option value="35x45">Italy - 35x45 mm</option>
+        <option value="35x45">Spain - 35x45 mm</option>
+        <option value="35x45">Brazil - 35x45 mm</option>
+        <option value="35x45">Russia - 35x45 mm</option>
+        <option value="35x45">South Africa - 35x45 mm</option>
+        <option value="35x45">Mexico - 35x45 mm</option>
+        <option value="35x45">Saudi Arabia - 35x45 mm</option>
+        <option value="35x45">South Korea - 35x45 mm</option>
+        <option value="35x45">Singapore - 35x45 mm</option>
+        <option value="35x45">Thailand - 35x45 mm</option>
+      </select>
+    </div>
+
+    <!-- Image Upload Section -->
+    <div class="upload-section">
+      <input type="file" id="imageUpload" accept="image/*">
+      <label for="imageUpload" class="upload-btn">Choose Image</label>
+      <p id="fileInfo"></p>
+    </div>
+
+    <!-- Cropped Image Display -->
+    <div class="output-section">
+      <canvas id="croppedCanvas"></canvas>
+      <a id="downloadLink" class="download-btn" download="cropped_image.jpg">Download Cropped Image</a>
+    </div>
+
+    <!-- Advertisement Spaces -->
+    <div class="ad-section">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="ad-section">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <script>
+    // Country Dropdown and Image Upload
+    const countrySelect = document.getElementById('countrySelect');
+    const imageUpload = document.getElementById('imageUpload');
+    const croppedCanvas = document.getElementById('croppedCanvas');
+    const downloadLink = document.getElementById('downloadLink');
+    const fileInfo = document.getElementById('fileInfo');
+
+    imageUpload.addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = new Image();
+          img.src = e.target.result;
+
+          img.onload = function () {
+            const ctx = croppedCanvas.getContext('2d');
+
+            // Get selected country's dimensions
+            const dimensions = countrySelect.value.split('x');
+            const width = parseInt(dimensions[0]);
+            const height = parseInt(dimensions[1]);
+
+            // Set canvas dimensions
+            croppedCanvas.width = width;
+            croppedCanvas.height = height;
+
+            // Calculate aspect ratio and crop
+            const aspectRatio = width / height;
+            let cropWidth = img.width;
+            let cropHeight = img.height;
+
+            if (img.width / img.height > aspectRatio) {
+              cropWidth = img.height * aspectRatio;
+            } else {
+              cropHeight = img.width / aspectRatio;
+            }
+
+            // Draw cropped image on canvas
+            ctx.drawImage(
+              img,
+              (img.width - cropWidth) / 2,
+              (img.height - cropHeight) / 2,
+              cropWidth,
+              cropHeight,
+              0,
+              0,
+              width,
+              height
+            );
+
+            // Show canvas and download link
+            croppedCanvas.style.display = 'block';
+            downloadLink.href = croppedCanvas.toDataURL('image/jpeg');
+            downloadLink.style.display = 'inline-block';
+
+            // Update file info
+            fileInfo.textContent = `File: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+          };
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
