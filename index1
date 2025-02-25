@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online tools for PDF and image manipulation. Merge, split, compress, crop, and more. Easy-to-use, fast, and responsive tools for all your needs.">
+  <meta name="keywords" content="PDF tools, image tools, PDF merge, PDF split, image compressor, image cropper, online tools, free tools">
+  <meta name="author" content="Your Name">
+  <title>Online Tools - PDF and Image Manipulation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .tool-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .tool-card i {
+      font-size: 3rem;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .tool-card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .tool-card p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .ad-section {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .ad-section ins {
+      display: block;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+      border-radius: 10px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Online Tools</h1>
+      <p>Free, fast, and easy-to-use tools for all your PDF and image needs.</p>
+    </header>
+
+    <!-- Tools Grid -->
+    <div class="tools-grid">
+      <!-- PDF Merge -->
+      <a href="pdf-merge.html" class="tool-card">
+        <i class="fas fa-file-pdf"></i>
+        <h3>PDF Merge</h3>
+        <p>Combine multiple PDF files into one document.</p>
+      </a>
+
+      <!-- PDF Split -->
+      <a href="pdf-split.html" class="tool-card">
+        <i class="fas fa-cut"></i>
+        <h3>PDF Split</h3>
+        <p>Split a PDF file into individual pages or sections.</p>
+      </a>
+
+      <!-- Image Cropper -->
+      <a href="image-cropper.html" class="tool-card">
+        <i class="fas fa-crop"></i>
+        <h3>Image Cropper</h3>
+        <p>Crop images to specific dimensions for passports, social media, and more.</p>
+      </a>
+
+      <!-- Image Compressor -->
+      <a href="image-compressor.html" class="tool-card">
+        <i class="fas fa-file-image"></i>
+        <h3>Image Compressor</h3>
+        <p>Compress images to reduce file size without losing quality.</p>
+      </a>
+
+      <!-- PDF to Word -->
+      <a href="#" class="tool-card">
+        <i class="fas fa-file-word"></i>
+        <h3>PDF to Word</h3>
+        <p>Convert PDF files to editable Word documents.</p>
+      </a>
+
+      <!-- Word to PDF -->
+      <a href="#" class="tool-card">
+        <i class="fas fa-file-pdf"></i>
+        <h3>Word to PDF</h3>
+        <p>Convert Word documents to PDF files.</p>
+      </a>
+
+      <!-- More Tools -->
+      <a href="#" class="tool-card">
+        <i class="fas fa-tools"></i>
+        <h3>More Tools</h3>
+        <p>Explore more tools for your daily needs.</p>
+      </a>
+    </div>
+
+    <!-- Advertisement Section -->
+    <div class="ad-section">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_AD_CLIENT_ID" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 Online Tools. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
