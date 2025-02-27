@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Background Changer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .upload-section {
+      margin-bottom: 20px;
+    }
+
+    .upload-label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .upload-label:hover {
+      background-color: #0056b3;
+    }
+
+    .background-options {
+      margin-bottom: 20px;
+    }
+
+    .colors {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .colors button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .colors button:hover {
+      transform: scale(1.1);
+    }
+
+    .preview-section {
+      margin-bottom: 20px;
+    }
+
+    #imageCanvas {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #downloadBtn {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #downloadBtn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    #downloadBtn:hover:not(:disabled) {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Image Background Changer</h1>
+    <div class="upload-section">
+      <input type="file" id="imageUpload" accept="image/*" />
+      <label for="imageUpload" class="upload-label">Upload Image</label>
+    </div>
+    <div class="background-options">
+      <h2>Select Background</h2>
+      <div class="colors">
+        <button data-color="#FF0000" style="background-color: #FF0000;"></button>
+        <button data-color="#00FF00" style="background-color: #00FF00;"></button>
+        <button data-color="#0000FF" style="background-color: #0000FF;"></button>
+        <button data-color="#FFFF00" style="background-color: #FFFF00;"></button>
+        <button data-color="#FF00FF" style="background-color: #FF00FF;"></button>
+      </div>
+    </div>
+    <div class="preview-section">
+      <canvas id="imageCanvas"></canvas>
+    </div>
+    <button id="downloadBtn" disabled>Download Modified Image</button>
+  </div>
+
+  <script>
+    const imageUpload = document.getElementById('imageUpload');
+    const canvas = document.getElementById('imageCanvas');
+    const ctx = canvas.getContext('2d');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const colorButtons = document.querySelectorAll('.colors button');
+
+    let uploadedImage = null;
+    let selectedColor = '#FF0000';
+
+    // Handle image upload
+    imageUpload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const img = new Image();
+          img.onload = () => {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            uploadedImage = img;
+            downloadBtn.disabled = false;
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Handle background color selection
+    colorButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        selectedColor = button.getAttribute('data-color');
+        applyBackground();
+      });
+    });
+
+    // Apply selected background color
+    function applyBackground() {
+      if (uploadedImage) {
+        ctx.fillStyle = selectedColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(uploadedImage, 0, 0);
+      }
+    }
+
+    // Handle download
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.download = 'modified-image.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  </script>
+</body>
+</html>
